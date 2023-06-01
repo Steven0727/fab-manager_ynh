@@ -11,7 +11,8 @@ Environment="__YNH_RUBY_LOAD_PATH__"
 Environment="RAILS_ENV=development"
 Environement="DEFAULT_HOST=__DOMAIN__"
 ExecStartPre=-/bin/bash -c 'rm -f __FINAL_PATH__/tmp/pids/server.pid'
-ExecStart=__FINALPATH__/bin/bundle exec rails s puma -p __PORT__ -b 0.0.0.0
+#ExecStart=__FINALPATH__/bin/bundle exec rails s puma -p __PORT__ -b 0.0.0.0
+ExecStart=__FINALPATH__/bin/bundle exec rails s -b "ssl://0.0.0.0:__PORT__?key=config/ssl.key&cert=config/ssl.crt"
 ExecReload=/bin/kill -SIGUSR1 $MAINPID
 TimeoutSec=30
 Restart=always
