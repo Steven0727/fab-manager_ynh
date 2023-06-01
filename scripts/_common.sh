@@ -11,7 +11,6 @@ build_pkg_dependencies=""
 
 memory_needed="2560"
 ruby_version=3.2.2
-ruby2_version = 2.7.0
 nodejs_version=18.15.0
 
 # Workaround for Mastodon on Bullseye
